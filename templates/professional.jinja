@@ -1,0 +1,152 @@
+{% extends 'base.jinja' %}
+
+{% macro hyperlink_endnote(url, text) %}
+<a target="_blank" href="{{ url }}" title="{{ text }}" aria-label="Visit {{ text }}">
+    {{ text }}
+    <span class="endnote">¶</span>
+    <span class="endnote print-only">{{ url }}</span>
+</a>
+{% endmacro %}
+
+{% macro hyperlink_footnote(url, text, footnotes, contents="") %}
+<a target="_blank" href="{{ url }}">{{ text }}</a>
+{% set footnote = contents + url %}
+{% set _ = footnotes.append(footnote) %}
+<sup><a target="_blank" href="#footnote{{ footnotes|length }}">{{ footnotes|length }}</a></sup>
+{% endmacro %}
+
+
+{% block footnotes %}
+<ol class="footnotes">
+    {% for footnote in footnotes %}
+    <li id="{{ 'footnote' + loop.index1|string }}">{{ footnote }}</li>
+    {% endfor %}
+</ol>
+{%endblock footnotes%}
+
+
+{% block title %}
+<h1>{{ resume.name }}</h1>
+<h2>{{ resume.title }}</h2>
+{% endblock %}
+
+{% block current %}
+<h3>CURRENT</h3>
+<ul class="compact">
+    <li>
+        {{ resume.current.role }}
+    </li>
+    <li>
+        timezone: {{ resume.current.timezone }}
+    </li>
+    <li>
+        {{ resume.current.phone }}
+    </li>
+    <li>
+        <a target="_blank" href="mailto:{{ resume.current.email }}">{{ resume.current.email }}</a>
+    </li>
+    {% for url in resume.current.urls %}
+    <li>
+        {{ hyperlink_endnote(url.url, url.name) }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+
+{% block summary %}
+<h3></h3>
+<p>
+    {{ resume.summary }}
+</p>
+{% endblock %}
+
+{% block professionl_experience %}
+<h3>PROFESSIONAL EXPERIENCE</h3>
+{% for experience in resume.professional_experience %}
+<p class="timeline">{{ experience.timeline }}
+<p>
+<h4>{{ experience.company }}</h4>
+<h5>{{ experience.role }}</h5>
+<ul class="simple">
+    {% for achievement in experience.achievements %}
+    <li>
+        {{ achievement }}
+    </li>
+    {% endfor %}
+</ul>
+{% endfor %}
+{% endblock %}
+
+
+{% block certification %}
+<h3>CERTIFICATIONS</h3>
+{% for certification in resume.certifications %}
+<p class="timeline">{{ certification.timeline }}
+<p>
+<h4>
+    {{ hyperlink_endnote(certification.url, certification.name) }}
+</h4>
+<h5>{{ certification.certified_by }}</h5>
+<p>
+    {{ certification.description }}
+</p>
+{% endfor %}
+{% endblock %}
+
+{% block projects %}
+<h3>PROJECTS</h3>
+{% for project in resume.projects %}
+<p class="timeline">
+    {{ project.timeline }}
+<p>
+<h4>
+    {{ hyperlink_endnote(project.url, project.name) }}
+</h4>
+<h5>{{ project.role }}</h5>
+<ul class="simple">
+    {% for achievement in project.achievements %}
+    <li>
+        {{ achievement }}
+    </li>
+    {% endfor %}
+</ul>
+{% endfor %}
+{% endblock %}
+
+{% block skills %}
+<h3>SKILLS</h3>
+<ul class="compact">
+{% for skillset in resume.skills %}
+    {% for detail in skillset.details %}
+        <li>
+            {{ detail }}
+        </li>
+    {% endfor %}
+{% endfor %}
+</ul>
+{% endblock %}
+
+{% block education %}
+<h3>EDUCATION</h3>
+{% for education in resume.education %}
+<p class="timeline">{{ education.timeline }}
+<p>
+<h4>{{ education.school }}</h4>
+<h5>{{ education.degree }}</h5>
+<ul class="simple">
+    {% for achievement in education.achievements %}
+    <li>
+        {{ achievement }}
+    </li>
+    {% endfor %}
+</ul>
+{% endfor %}
+{% endblock %}
+
+{% block footer %}
+<p class="footer" style="text-align: center;">
+<br>
+Last updated on {{ resume.last_updated_at }}
+</p>
+{% endblock footer %}
