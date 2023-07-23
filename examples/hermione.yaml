@@ -1,0 +1,87 @@
+# --DANGER ZONE: MUST UPDATE EVERY TIME
+last_updated_at: April 22, 2022
+recipient: Beauxbatons Academy of Magic
+job_opening_url: example.com/Beauxbatons-career
+coverletter: >
+  I am a highly skilled and dedicated witch with a passion for learning and making a positive impact on the wizarding world. With my extensive education at Hogwarts School of Witchcraft and Wizardry and my experience in various magical pursuits, I am confident in my ability to contribute to any team or organization. I am excited to apply my skills and knowledge to new challenges and opportunities.
+# --END OF DANGER ZONE
+name: Hermione Granger
+title: Witch and Wizarding World Advocate
+summary: A highly skilled and dedicated witch with a passion for learning and making a positive impact on the wizarding world.
+current:
+  role: Minter at Ministry of Magic
+  timezone: British Summer Time (GMT+1)
+  email: hermione.granger@hogwarts.edu
+  phone: +82 1012345678
+  address: 7 Gryffindor Tower
+    Hogwarts School of Witchcraft and Wizardry
+    Scotland
+  urls:
+    - name: linkedin
+      url: wizardlinkedin.com/in/hermione-granger
+    - name: github
+      url: https://wizard-github.com/hermione-granger
+skills:
+  - type: Wizardry
+    details:
+      - Charms
+      - Transfiguration
+      - Potions
+      - Defense Against the Dark Arts
+  - type: Other skills
+    details:
+      - Leadership
+      - Fluent in English and French
+professional_experience:
+  - role: Minister of Magic
+    company: Ministry of Magic
+    location: London, England
+    timeline: August 2020 - Present
+    achievements:
+      - Leading the Ministry of Magic and ensuring the safety and well-being of the Wizarding World
+      - Developing policies and legislation to promote equality and justice for all witches and wizards
+      - Collaborating with Hogwarts School of Witchcraft and Wizardry to improve education and training programs
+  - role: Hogwarts Professor
+    company: Hogwarts School of Witchcraft and Wizardry
+    location: Scotland
+    timeline: September 1998 - June 2020
+    achievements:
+      - Taught Charms, Transfiguration, and Defense Against the Dark Arts to students
+      - Mentored and advised students on academic and personal matters
+      - Organized and led various student groups and activities
+projects:
+  - name: SPEW (Society for the Promotion of Elfish Welfare)
+    timeline: 2010
+    role: leader
+    description: A campaign to promote the rights and welfare of house-elves
+    achievements:
+      - Successfully convinced the Hogwarts house-elves to accept clothes and payment
+      - Raised awareness and gained support for elf rights throughout the Wizarding World
+    stack:
+      - Leadership
+      - Advocacy
+    url: example.com/spew
+  - name: Time-Turner Project
+    timeline: 2010
+    role: developer
+    description: An experiment with a time-turner to attend multiple classes at the same time
+    achievements:
+      - Improved academic performance and knowledge acquisition
+      - Identified and solved various problems related to time-travel
+    stack:
+      - Time-Turner
+      - Time-Management
+    url: example.com/time-turner-project
+education:
+  - degree: Bachelor of Witchcraft and Wizardry
+    school: Hogwarts School of Witchcraft and Wizardry
+    location: Scotland
+    timeline: May 1998
+    achievements:
+      - Successfully led a campaign to promote the rights and welfare of house-elves.
+certifications:
+  - name: Expert of Charms
+    url: example.com/association-of-charms
+    certified_by: Association of Charms
+    timeline: 2020
+    description: Highly skilled at charms.
